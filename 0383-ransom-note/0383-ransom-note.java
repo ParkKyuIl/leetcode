@@ -19,3 +19,14 @@ class Solution {
     return true;
     }
 }
+
+// class Solution {
+//     public boolean canConstruct(String ransomNote, String magazine) {
+//         int[] rnct=new int[26];
+//         int[] magct=new int[26];
+//         for(char c:ransomNote.toCharArray()) rnct[c-'a']++;
+//         for(char c:magazine.toCharArray()) magct[c-'a']++;
+//         for(int i=0;i<26;i++) if(magct[i]<rnct[i]) return false;
+//         return true;
+//     }
+// }

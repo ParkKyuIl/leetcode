@@ -13,8 +13,6 @@ public class Main {
         int b = Integer.parseInt(st.nextToken());
         int c = Integer.parseInt(st.nextToken());
 
-
-
         for(int i=0;i<3;i++){
             StringTokenizer parkingTime = new StringTokenizer(br.readLine());
 
@@ -26,22 +24,19 @@ public class Main {
             }
         }
 
-
         for(int num:parking){
-            if(num == 1){
-                sum+=a;
-            } else if (num == 2) {
-                sum+=b *2;
+            if(num != 0){
+                if(num == 1){
+                    sum+=a;
+                } else if (num == 2) {
+                    sum+=b *2;
+                }
+                else if(num ==3){
+                    sum+=c * 3;
+                }
             }
-            else if(num ==3){
-                sum+=c * 3;
-            }
-
         }
-
         System.out.println(sum);
-
-
     }
 
 }

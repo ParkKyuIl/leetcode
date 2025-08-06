@@ -5,29 +5,26 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int num = Integer.parseInt(br.readLine());
 
-        Map<Character,Integer> map = new HashMap<>();
+        int[] cnt = new int[26];
+        StringBuilder ret = new StringBuilder();
 
-        int playerNumbers = Integer.parseInt(br.readLine());
-
-        for(int i=0;i<playerNumbers;i++){
-            char[] playerLastName = br.readLine().toCharArray();
-
-            map.put(playerLastName[0],map.getOrDefault(playerLastName[0],0)+1);
-
+        for(int i=0;i<num;i++){
+            cnt[br.readLine().toCharArray()[0] - 'a']++;
         }
 
-       if(map.entrySet().stream().noneMatch(entry -> entry.getValue() >= 5)){
-           System.out.println("PREDAJA");
-       }else{
-           map.entrySet().stream()
-                   .filter(entry -> entry.getValue() >= 5)
-                   .map(Map.Entry::getKey)
-                   .sorted()
-                   .forEach(System.out::print);
-       }
-
-
+        for(int i=0;i<26;i++){
+            if(cnt[i] >= 5){
+                int asciiNum = i + 'a';
+                ret.append((char) asciiNum);
+            }
+        }
+        if(ret.length()==0){
+            System.out.println("PREDAJA");
+        }else{
+            System.out.println(ret);
+        }
     }
 
 }

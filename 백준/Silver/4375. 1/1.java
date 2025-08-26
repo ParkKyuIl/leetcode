@@ -7,10 +7,10 @@ public class Main {
         while ((line = br.readLine()) != null) {
             int n = Integer.parseInt(line);
 
-            int rem = 1 % n;
+            int rem = 1;
             int len = 1;
 
-            while (rem != 0) {
+            while (rem % n != 0) {
                 rem = (rem * 10 + 1) % n;
                 len++;
             }
